@@ -1,7 +1,6 @@
-### brainfuck interpreter
+### brainf.ck interpreter
 
-Excuse the profanity :)  
-Simple brainfuck interpreter written in C   
+Simple brainf.ck interpreter written in C   
 
 More info (language, specifications) :  
 
