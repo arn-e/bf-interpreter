@@ -1,0 +1,9 @@
+### brainfuck interpreter
+
+Excuse the profanity :)  
+Simple brainfuck interpreter written in C   
+
+More info (language, specifications) :  
+
+http://en.wikipedia.org/wiki/Brainfuck  
+http://esolangs.org/wiki/brainfuck  
