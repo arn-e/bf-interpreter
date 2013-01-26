@@ -1,56 +1,22 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include "ptr_operations.h"
 
-char input[] = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
-int memory[1000];
+#define MAX_DATA 5000
+
+char instructions[MAX_DATA];
+int memory[3000];
 int *mem_ptr = memory;
-char *read_ptr = input;
+char *read_ptr = instructions;
 int running = 1;
-
-void ptr_right()
-{
-  ++mem_ptr;
-  return;
-}
-
-void ptr_left()
-{
-  --mem_ptr;
-  return;
-}
-
-void increment()
-{
-  ++*mem_ptr;
-  return;
-}
-
-void decrement()
-{
-  --*mem_ptr;
-  return;
-}
-
-void print_char()
-{
-  putchar(*mem_ptr);
-  return;
-}
-
-void get_char()
-{
-  *mem_ptr = getchar();  
-  return;
-}
 
 void jump_forward(){
   while (*read_ptr){
     if (strncmp(read_ptr, "]", 1) == 0 ) { ++read_ptr; break;}
     ++read_ptr;
-
   }
-s  return;
+  return;
 }
 
 void jump_back() {
@@ -67,19 +33,19 @@ void parse_cmd(char cmd)
   switch(cmd)
   {
     case '>':
-      ptr_right();
+      PTR_RIGHT;
       return;
     case '<':
-      ptr_left();
+      PTR_LEFT;
       return;
     case '+':
-      increment();
+      INCREMENT;
       return;
     case '-':
-      decrement();
+      DECREMENT;
       return;
     case '.':
-      print_char();
+      PRINT_CHAR;
       return;
     case '[':
       if (*mem_ptr == 0){
@@ -92,7 +58,7 @@ void parse_cmd(char cmd)
       }
       return;
     case ',':
-      get_char();
+      GET_CHAR;
       return;
   };
 }
@@ -109,8 +75,14 @@ void read_instructions()
 int main(int argc, char const *argv[])
 {
   int i;
+  char *input = NULL;
 
-  while (i != EOF) {
+  printf("Instruction Set : \n");
+  input = fgets(instructions, MAX_DATA-1, stdin);
+  read_ptr = instructions;
+  
+  for (int i = 0; i < strlen(instructions); i ++){
+    if (instructions[i] == '\n') { instructions[i] = '\0'; }
 
   }
   read_instructions();

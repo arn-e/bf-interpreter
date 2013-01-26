@@ -1,4 +1,4 @@
-### brainf.ck interpreter
+## brainf.ck interpreter
 
 Simple brainf.ck interpreter written in C   
 
@@ -6,3 +6,16 @@ More info (language, specifications) :
 
 http://en.wikipedia.org/wiki/Brainfuck  
 http://esolangs.org/wiki/brainfuck  
+
+### Usage
+
+Enter instruction set :  
+
+    make bf_interpreter && ./bf_interpreter
+
+    Instruction Set :
+    ++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.
+    
+Output :  
+
+    Hello World!
